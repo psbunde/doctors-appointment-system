@@ -71,7 +71,6 @@
 .aboutus p{
     font-family: 300px;
     font-size:medium;
-    /* font-weight: bolder; */
     font-family: 'Sansita Swashed', cursive;
 }
 .aboutus h4{
@@ -91,7 +90,7 @@
 
 .aboutus{
     font-family: 'Sansita Swashed', cursive;
-    /* background-image: url("../src/images/about.png"); */
+    background-image: url("../src/images/image8.jpg");
     background-repeat: no-repeat;
 }
 

@@ -1,15 +1,31 @@
+
 import { Link, Route ,Routes ,useNavigate} from 'react-router-dom';
 import './App.css';
 import LoginComp from './components/LoginComp';
-import HomeComp from './components/HomeComp';
+
+import AdminHomeComp from './components/AdminHomeComp';
+import DoctorHomeComp from './components/DoctorHomeComp';
 import PatientHomeComp from './components/PatientHomeComp';
+import ViewAppointmentDoctorComp from './components/ViewAppointmentDoctorComp';
+import ViewAppointmentPatientComp from './components/ViewAppointmentPatientComp';
 import LogoutComp from './components/LogoutComp';
 import PatientRegistrationComp from './components/PatientRegistrationComp';
+import DoctorRegistrationComp from './components/DoctorRegistrationComp';
+import AddScheduleComp from './components/AddScheduleComp';
+import DoctorDeptComp from './components/DoctorDeptComp';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
+import AllDoctorsComp from './components/AllDoctorsComp';
+import ViewSchedule from './components/ViewSchedule';
+import HomeComp from './components/HomeComp';
+import ApproveCancellationComp from './components/ApproveCancellationComp';
 import ViewPatientComp from './components/ViewPatientComp';
+import AdminViewDoctorsComp from './components/AdminViewDoctorsComp';
+import AdminViewPatientsComp from './components/AdminViewPatientsComp';
+import AdminViewAppointmentsComp from './components/AdminViewAppointmentsComp';
+import ViewDoctorComp from './components/ViewDoctorComp';
 import ContactUsComp from './components/ContactUsComp';
 import AboutUsComp from './components/AboutUsComp';
 import ForgetPasswordComp from './components/ForgetPasswordComp';
@@ -56,7 +72,7 @@ function App() {
                     </li>
                     <li className="nav-item">
                     <DropdownButton variant="none"
-                          alignright
+                          alignRight
                           title="Departments"
                           id="dropdown-menu-align-right"
                             >
@@ -99,11 +115,32 @@ function App() {
       <Routes>
           <Route path="/" element={<HomeComp/>}  />
           <Route path="/login" element={<LoginComp/>}  />
-          <Route path="/patienthome" element={<PatientHomeComp/>}>
-              
+          <Route path="/adminhome" element={<AdminHomeComp/>}>
+                <Route path="doctorRegistration" element={<DoctorRegistrationComp/>}  />
+                <Route path="approveCancellation" element={<ApproveCancellationComp/>}  />  
+                <Route path="viewAllDoctors" element={<AdminViewDoctorsComp/>}  />
+                <Route path="viewAllPatients" element={<AdminViewPatientsComp/>}  />
+                <Route path="viewAllAppointments" element={<AdminViewAppointmentsComp/>}  />
+                <Route path="viewPatient" element={<ViewPatientComp/>}  />
+                <Route path="viewDoctor" element={<ViewDoctorComp/>}  />
           </Route>
+          <Route path="/doctorhome" element={<DoctorHomeComp/>}>
+                <Route path="addSchedule" element={<AddScheduleComp/>}  />
+                <Route path="viewDoctorAppointment" element={<ViewAppointmentDoctorComp/>}  />
+                <Route path="viewPatient" element={<ViewPatientComp/>}  />
+
+          </Route>
+          <Route path="/patienthome" element={<PatientHomeComp/>}>
+              <Route path="viewDoctors" element={<AllDoctorsComp/>}/>
+              <Route path="viewSchedule" element={<ViewSchedule/>}/>
+              <Route path="viewPatientAppointment" element={<ViewAppointmentPatientComp/>}  />
+          </Route>
+          
+          <Route path="/viewDoctors" element={<AllDoctorsComp/>}/>
           <Route path="/logout" element={<LogoutComp/>}  />
-          <Route path="/patientRegistration" element={<PatientRegistrationComp/>}  />
+          <Route path="/patientRegistration" element={<PatientRegistrationComp/>}  />   
+          <Route path="/doctorDept" element={<DoctorDeptComp/>}/>  
+          <Route path="/viewDoctors" element={<AllDoctorsComp/>}/>  
           <Route path="/contactus" element={<ContactUsComp/>}/> 
           <Route path="/aboutus" element={<AboutUsComp/>}/> 
           <Route path="/forgetPassword" element={<ForgetPasswordComp/>}/> 
