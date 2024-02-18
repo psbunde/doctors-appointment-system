@@ -1,4 +1,4 @@
-mport { useEffect, useState, useReducer } from "react"
+import { useEffect, useState, useReducer } from "react"
 import { useNavigate } from "react-router-dom";
 
 export default function ViewSchedule()
@@ -23,8 +23,8 @@ export default function ViewSchedule()
         switch(action.type)
         {
             case 'update':
-                const{date,doctor_id,patient_id,slot,status_id}=action.data;
-                return {...state,date,doctor_id,patient_id,slot,status_id};
+                const{date,doctor_id,patient_id,slot,status}=action.data;
+                return {...state,date,doctor_id,patient_id,slot,status};
             case 'reset':
                 return init;
         }
@@ -76,7 +76,7 @@ export default function ViewSchedule()
             <h3> {/*doctor && doctor.doctor_id.user_id.fname} {doctor && doctor.doctor_id.user_id.lname*/} </h3>
 
                 <form>
-                    <table className="table table-striped">
+                    <table class="table table-striped">
                         <thead>
                             <th>Date</th>
                             <th>Day</th>
@@ -90,8 +90,8 @@ export default function ViewSchedule()
                                     <td><p>{days[new Date(sd.date).getDay()]}</p></td>
                                     <td>
                                         {sd.slots.map((st)=>{
-                                            return  <button type="submit" className="btn btn-primary btn-lg ms-2"  disabled={st.status?false:true}
-                                                        onMouseDown={()=>{dispatch({type:'update',data:{date:sd.date,doctor_id:doctorid,patient_id:patientid,slot:st.slot_time,status_id:"1"}})}}
+                                            return  <button type="submit" class="btn btn-primary btn-lg ms-2"  disabled={st.status?false:true}
+                                                        onMouseDown={()=>{dispatch({type:'update',data:{date:sd.date,doctor_id:doctorid,patient_id:patientid,slot:st.slot_time,status:"SCHD"}})}}
                                                         onMouseUp={(e)=>sendData(e)}>{st.slot_time}</button>
                                                     
                                         })}

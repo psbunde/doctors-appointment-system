@@ -1,4 +1,5 @@
-//import image8 from'../images/about.png';
+
+import image8 from'../images/image8.jpg';
 
 export default function AboutUsComp(){
 

@@ -7,8 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.example.demo.*")
 public class ProjectMiddleTierDoctorsAppointmentApplication {
-	
-	public static void main(String[] args) throws Exception {
+
+	public static void main(String[] args) {
 		SpringApplication.run(ProjectMiddleTierDoctorsAppointmentApplication.class, args);
 	}
 

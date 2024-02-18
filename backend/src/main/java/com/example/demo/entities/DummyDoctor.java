@@ -1,21 +1,18 @@
 package com.example.demo.entities;
 
-import java.sql.Date;
-
-public class DummyPatient {
-
-	String fname,lname,email,password,contact_no,gender,answer,area,city,state,blood_group,diabetes,blood_pressure;
-	int role_id,question_id,pincode;
-	Date birthdate;
+public class DummyDoctor {
 	
-	public DummyPatient() {
+	String fname,lname,email,password,contact_no,gender,answer,qualification,specialization,department,type,area,city,state;
+	int role_id,question_id,experience,imr_no,pincode;
+	
+	public DummyDoctor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public DummyPatient(String fname, String lname, String email, String password, String contact_no, String gender,
-			String answer, String area, String city, String state, String blood_group, String diabetes,
-			String blood_pressure, int role_id, int question_id, int pincode, Date birthdate) {
+	public DummyDoctor(String fname, String lname, String email, String password, String contactNo, String gender,
+			String answer, String qualification, String specialization, String department, String type, String area,
+			String city, String state, int pincode, int role_id, int question_id, int experience, int imr_no) {
 		super();
 		this.fname = fname;
 		this.lname = lname;
@@ -24,16 +21,18 @@ public class DummyPatient {
 		this.contact_no = contact_no;
 		this.gender = gender;
 		this.answer = answer;
+		this.qualification = qualification;
+		this.specialization = specialization;
+		this.department = department;
+		this.type = type;
 		this.area = area;
 		this.city = city;
 		this.state = state;
-		this.blood_group = blood_group;
-		this.diabetes = diabetes;
-		this.blood_pressure = blood_pressure;
+		this.pincode = pincode;
 		this.role_id = role_id;
 		this.question_id = question_id;
-		this.pincode = pincode;
-		this.birthdate = birthdate;
+		this.experience = experience;
+		this.imr_no = imr_no;
 	}
 
 	public String getFname() {
@@ -92,6 +91,38 @@ public class DummyPatient {
 		this.answer = answer;
 	}
 
+	public String getQualification() {
+		return qualification;
+	}
+
+	public void setQualification(String qualification) {
+		this.qualification = qualification;
+	}
+
+	public String getSpecialization() {
+		return specialization;
+	}
+
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public String getArea() {
 		return area;
 	}
@@ -116,28 +147,12 @@ public class DummyPatient {
 		this.state = state;
 	}
 
-	public String getBlood_group() {
-		return blood_group;
+	public int getPincode() {
+		return pincode;
 	}
 
-	public void setBlood_group(String blood_group) {
-		this.blood_group = blood_group;
-	}
-
-	public String getDiabetes() {
-		return diabetes;
-	}
-
-	public void setDiabetes(String diabetes) {
-		this.diabetes = diabetes;
-	}
-
-	public String getBlood_pressure() {
-		return blood_pressure;
-	}
-
-	public void setBlood_pressure(String blood_pressure) {
-		this.blood_pressure = blood_pressure;
+	public void setPincode(int pincode) {
+		this.pincode = pincode;
 	}
 
 	public int getRole_id() {
@@ -156,22 +171,22 @@ public class DummyPatient {
 		this.question_id = question_id;
 	}
 
-	public int getPincode() {
-		return pincode;
+	public int getExperience() {
+		return experience;
 	}
 
-	public void setPincode(int pincode) {
-		this.pincode = pincode;
+	public void setExperience(int experience) {
+		this.experience = experience;
 	}
 
-	public Date getBirthdate() {
-		return birthdate;
+	public int getImr_no() {
+		return imr_no;
 	}
 
-	public void setBirthdate(Date birthdate) {
-		this.birthdate = birthdate;
+	public void setImr_no(int imr_no) {
+		this.imr_no = imr_no;
 	}
 	
 	
-	
+
 }
